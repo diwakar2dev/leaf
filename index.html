@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leaf Studio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Orbitron',sans-serif;
+    background:#050805;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* ===== Background Glow ===== */
+body::before{
+    content:"";
+    position:fixed;
+    top:-50%;left:-50%;
+    width:200%;height:200%;
+    background:radial-gradient(circle at center, rgba(57,255,20,0.07), transparent 40%);
+    animation:rotate 25s linear infinite;
+    z-index:-1;
+}
+@keyframes rotate{
+    from{transform:rotate(0);}
+    to{transform:rotate(360deg);}
+}
+
+/* ===== NAVBAR ===== */
+nav{
+    position:fixed;
+    top:30px;
+    left:50%;
+    transform:translateX(-50%);
+    width:85%;
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(0,0,0,0.6);
+    backdrop-filter:blur(15px);
+    border-radius:50px;
+    border:1px solid rgba(57,255,20,0.2);
+    z-index:1000;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+nav img{
+    width:35px;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+nav ul li a{
+    text-decoration:none;
+    color:white;
+    transition:0.3s;
+}
+
+nav ul li a:hover{
+    color:#39FF14;
+}
+
+/* ===== HERO ===== */
+.hero{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    padding:0 20px;
+}
+
+.hero h1{
+    font-size:90px;
+    font-weight:900;
+    color:#39FF14;
+    text-shadow:0 0 30px #39FF14;
+}
+
+.hero p{
+    margin-top:20px;
+    font-size:20px;
+    max-width:700px;
+    color:#ccc;
+}
+
+.btn{
+    margin-top:40px;
+    padding:18px 40px;
+    border:2px solid #39FF14;
+    color:#39FF14;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:#39FF14;
+    color:black;
+    box-shadow:0 0 30px #39FF14;
+}
+
+/* ===== SECTION STYLE ===== */
+section{
+    padding:150px 10%;
+    text-align:center;
+}
+
+section h2{
+    font-size:45px;
+    margin-bottom:30px;
+    color:#39FF14;
+    text-shadow:0 0 15px #39FF14;
+}
+
+.card-grid{
+    margin-top:40px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:40px;
+}
+
+.card{
+    padding:40px;
+    border:1px solid rgba(57,255,20,0.2);
+    border-radius:20px;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 30px #39FF14;
+}
+
+footer{
+    padding:40px;
+    text-align:center;
+    border-top:1px solid rgba(57,255,20,0.2);
+    margin-top:100px;
+}
+
+@media(max-width:768px){
+    .hero h1{
+        font-size:50px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">
+        <img src="leaf.png">
+        <span style="color:#39FF14;">Leaf Studio</span>
+    </div>
+    <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>JJ STUDIO</h1>
+    <p>Building Scalable Digital Systems & High Performance Web Applications</p>
+    <a href="#projects" class="btn">Explore Work</a>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+    <h2>About Us</h2>
+    <p>
+        We are a full stack development team focused on building powerful, scalable and future-ready digital systems with cutting-edge technologies.
+    </p>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+    <h2>Our Services</h2>
+    <div class="card-grid">
+        <div class="card">
+            <h3>Web Development</h3>
+            <p>Modern high-performance websites & applications.</p>
+        </div>
+        <div class="card">
+            <h3>System Architecture</h3>
+            <p>Scalable backend systems designed for growth.</p>
+        </div>
+        <div class="card">
+            <h3>UI/UX Design</h3>
+            <p>Premium cyber-style interface experiences.</p>
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+    <h2>Projects</h2>
+    <div class="card-grid">
+        <div class="card">Flarebyte</div>
+        <div class="card">EnderNode</div>
+        <div class="card">CoreNode</div>
+        <div class="card">EnderSMP</div>
+    </div>
+</section>
+
+<!-- TEAM -->
+<section id="team">
+    <h2>Team Members</h2>
+    <div class="card-grid">
+        <div class="card">Ender</div>
+        <div class="card">Sai</div>
+        <div class="card">Luffy</div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: jaijayanthdiscord@gmail.com</p>
+</section>
+
+<footer>
+    © 2026 Leaf Studio. All Rights Reserved.
+</footer>
+
+</body>
+</html>
