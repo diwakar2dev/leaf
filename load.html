@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leaf Studio | Digital Engineering Studio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Outfit',sans-serif;
+}
+
+html{scroll-behavior:smooth;}
+
+body{
+background:#050b07;
+color:#fff;
+overflow-x:hidden;
+}
+
+/* ===== Scroll Progress Bar ===== */
+#progress{
+position:fixed;
+top:0;
+left:0;
+height:3px;
+background:#00ff88;
+width:0%;
+z-index:2000;
+}
+
+/* ===== Particles Background ===== */
+#particles-js{
+position:fixed;
+width:100%;
+height:100%;
+z-index:-3;
+}
+
+/* ===== Animated Grid Background ===== */
+body::before{
+content:"";
+position:fixed;
+inset:0;
+background:
+linear-gradient(#00ff2210 1px, transparent 1px),
+linear-gradient(90deg, #00ff2210 1px, transparent 1px);
+background-size:40px 40px;
+animation:gridMove 20s linear infinite;
+z-index:-2;
+}
+
+@keyframes gridMove{
+from{background-position:0 0;}
+to{background-position:40px 40px;}
+}
+
+/* ===== Navbar ===== */
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 10%;
+position:fixed;
+width:100%;
+background:rgba(0,0,0,0.5);
+backdrop-filter:blur(12px);
+z-index:1000;
+border-bottom:1px solid #00ff8820;
+transition:0.4s;
+}
+
+nav h1{
+color:#00ff88;
+font-weight:700;
+letter-spacing:2px;
+}
+
+nav h1 span{
+display:block;
+font-size:11px;
+letter-spacing:3px;
+color:#777;
+margin-top:4px;
+}
+
+nav a{
+color:#fff;
+text-decoration:none;
+margin-left:30px;
+font-weight:500;
+transition:0.3s;
+}
+
+nav a:hover{color:#00ff88;}
+
+/* ===== Hero ===== */
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:0 20px;
+}
+
+.hero h2{
+font-family:'Space Grotesk',sans-serif;
+font-size:64px;
+font-weight:700;
+margin-bottom:20px;
+background:linear-gradient(90deg,#00ff88,#00ffaa,#00ff88);
+background-size:200%;
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+animation:textGlow 5s linear infinite;
+}
+
+@keyframes textGlow{
+0%{background-position:0%;}
+100%{background-position:200%;}
+}
+
+.typing{
+font-size:18px;
+opacity:0.8;
+margin-bottom:40px;
+min-height:24px;
+}
+
+.btn{
+padding:15px 40px;
+background:transparent;
+color:#00ff88;
+border:2px solid #00ff88;
+border-radius:40px;
+font-weight:600;
+cursor:pointer;
+transition:0.4s;
+}
+
+.btn:hover{
+background:#00ff88;
+color:#000;
+box-shadow:0 0 40px #00ff88;
+}
+
+/* ===== Sections ===== */
+section{
+padding:120px 10%;
+opacity:0;
+transform:translateY(60px);
+transition:1s ease;
+}
+
+section.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.section-title{
+font-size:42px;
+margin-bottom:60px;
+color:#00ff88;
+text-align:center;
+font-family:'Space Grotesk',sans-serif;
+}
+
+/* ===== Cards ===== */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:40px;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+padding:40px;
+border-radius:24px;
+border:1px solid rgba(0,255,136,0.15);
+backdrop-filter:blur(30px);
+transition:all 0.4s ease;
+text-align:center;
+}
+
+.card:hover{
+transform:translateY(-15px);
+box-shadow:0 20px 60px #00ff8840;
+}
+
+.card h3{
+margin-bottom:15px;
+color:#00ffaa;
+font-size:22px;
+}
+
+.card p{
+opacity:0.8;
+font-size:15px;
+}
+
+/* ===== Footer ===== */
+footer{
+text-align:center;
+padding:40px;
+background:#08110c;
+border-top:1px solid #00ff8820;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="progress"></div>
+<div id="particles-js"></div>
+
+<nav>
+<h1>Leaf Studio <span>DIGITAL ENGINEERING</span></h1>
+<div>
+<a href="#">Home</a>
+<a href="#projects">Projects</a>
+<a href="#team">Team</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
+<div class="hero">
+<h2>We Build Systems That Don't Break.</h2>
+<p class="typing"></p>
+<a href="#projects"><button class="btn">Explore Projects</button></a>
+</div>
+
+<section id="projects">
+<h2 class="section-title">Our Projects</h2>
+<div class="grid">
+<div class="card"><h3>Flarebyte</h3><p>High-performance digital infrastructure engineered for scalability.</p></div>
+<div class="card"><h3>EnderNode</h3><p>Reliable hosting systems built for stability and uptime.</p></div>
+<div class="card"><h3>CoreNode</h3><p>Cloud-optimized backend architecture solutions.</p></div>
+<div class="card"><h3>EnderSMP</h3><p>Custom multiplayer ecosystems and performance systems.</p></div>
+</div>
+</section>
+
+<section id="team">
+<h2 class="section-title">Our Team</h2>
+<div class="grid">
+<div class="card"><h3>Ender</h3><p>Main Development Lead</p></div>
+<div class="card"><h3>JJ</h3><p>Founder & Strategic Lead</p></div>
+<div class="card"><h3>Sai</h3><p>Operations & Support</p></div>
+<div class="card"><h3>Luffy</h3><p>Senior Systems Engineer</p></div>
+</div>
+</section>
+
+<section id="contact">
+<h2 class="section-title">Contact Us</h2>
+<div style="text-align:center;">
+<p>Email: <a href="mailto:jaijayanthdiscord@gmail.com" style="color:#00ff88;">jaijayanthdiscord@gmail.com</a></p>
+</div>
+</section>
+
+<footer>
+© 2026 Leaf Studio. All Rights Reserved.
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.7.0/vanilla-tilt.min.js"></script>
+
+<script>
+particlesJS("particles-js", {
+  particles: {
+    number: { value: 60 },
+    size: { value: 2 },
+    color: { value: "#00ff88" },
+    line_linked: { enable: true, color: "#00ff88" },
+    move: { speed: 1 }
+  }
+});
+
+/* Scroll Progress */
+window.addEventListener("scroll", ()=>{
+let scrollTop = document.documentElement.scrollTop;
+let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+let scrolled = (scrollTop / height) * 100;
+document.getElementById("progress").style.width = scrolled + "%";
+});
+
+/* Scroll Reveal */
+const sections = document.querySelectorAll("section");
+window.addEventListener("scroll", ()=>{
+sections.forEach(sec=>{
+if(sec.getBoundingClientRect().top < window.innerHeight*0.8){
+sec.classList.add("show");
+}
+});
+});
+
+/* Typing Effect */
+const text = "Scalable Infrastructure • High Performance Systems • Modern Web Engineering";
+let i = 0;
+function typeWriter(){
+if(i < text.length){
+document.querySelector(".typing").innerHTML += text.charAt(i);
+i++;
+setTimeout(typeWriter,40);
+}
+}
+typeWriter();
+
+/* 3D Tilt */
+VanillaTilt.init(document.querySelectorAll(".card"), {
+max:10,
+speed:400,
+glare:true,
+"max-glare":0.2,
+});
+</script>
+
+</body>
+</html>
